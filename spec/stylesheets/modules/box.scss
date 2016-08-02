@@ -3,14 +3,10 @@
   box-sizing: border-box;
   min-height: 1rem;
   margin-bottom: 0;
-  background: #007FFF;
+  background: #ff7f00;
   border: 1px solid #FFF;
   border-radius: 2px;
   overflow: hidden;
   text-align: center;
   color: #fff;
-}
-
-.row {
-  composes: box;
 }

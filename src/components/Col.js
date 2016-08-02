@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import createProps from '../createProps';
-import style from 'flexboxgrid';
 
 const ModificatorType = PropTypes.oneOfType([PropTypes.number, PropTypes.bool]);
 
@@ -38,12 +37,12 @@ function getClassNames(props) {
   }
 
   if (props.reverse) {
-    extraClasses.push(style.reverse);
+    extraClasses.push('reverse');
   }
 
   return Object.keys(props)
     .filter(key => classMap[key])
-    .map(key => style[Number.isInteger(props[key]) ? (classMap[key] + '-' + props[key]) : classMap[key]])
+    .map(key => Number.isInteger(props[key]) ? (classMap[key] + '-' + props[key]) : classMap[key])
     .concat(extraClasses)
     .join(' ');
 }

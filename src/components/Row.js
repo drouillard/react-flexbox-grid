@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import createProps from '../createProps';
-import style from 'flexboxgrid';
 
 const ModificatorType = PropTypes.oneOf(['xs', 'sm', 'md', 'lg']);
 const modificatorKeys = ['start', 'center', 'end', 'top', 'middle', 'bottom', 'around', 'between', 'first', 'last'];
@@ -24,18 +23,18 @@ const propTypes = {
 };
 
 function getClassNames(props) {
-  const modificators = [style.row];
+  const modificators = ['row'];
 
   for (let i = 0; i < modificatorKeys.length; ++i) {
     const key = modificatorKeys[i];
     const value = props[key];
     if (value) {
-      modificators.push(style[`${key}-${value}`]);
+      modificators.push(`${key}-${value}`);
     }
   }
 
   if (props.reverse) {
-    modificators.push(style.reverse);
+    modificators.push('reverse');
   }
 
   return classNames(props.className, modificators);
